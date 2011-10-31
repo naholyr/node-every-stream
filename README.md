@@ -9,17 +9,25 @@ Stream('s3://amazon.com/path/to/file').pipe(Stream('dropbox://user:key@dropbox.c
 
 ## Install
 
-<pre>
-  npm install every-stream
-</pre>
+```bash
+# Using NPM
+npm install every-stream
+```
 
 Or from source:
 
-<pre>
-  git clone git://github.com/naholyr/node-every-stream.git every-stream
-  cd every-stream
-  npm link
-</pre>
+```bash
+# Install from sources
+git clone git://github.com/naholyr/node-every-stream.git every-stream
+cd every-stream
+npm link
+```
+
+You can run unit tests:
+
+```bash
+npm test every-auth
+```
 
 ## Usage
 
@@ -60,6 +68,7 @@ FTP driver is not available yet. This driver will behave like a super-simple str
 ## Roadmap
 
 * The obvious next step is implementing `FTP` driver
+* More documentation about advanced options
 * More documentation about custom drivers
 * New drivers
   * `SFTP`
