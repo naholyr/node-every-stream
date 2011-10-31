@@ -4,7 +4,7 @@
   "description": "Generic DSN-based streaming API (ftp, local fs, dropbox...) Stream('ftp://user@host/path/to/file.txt').pipe(Stream('file:///path/to/local.txt'))",
   "version": "0.0.1",
   "repository": {
-    "url": ""
+    "url": "git@github.com:naholyr/node-every-stream.git"
   },
   "main": "lib/stream.js",
   "engines": {
