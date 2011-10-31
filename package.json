@@ -6,7 +6,7 @@
   "repository": {
     "url": ""
   },
-  "main": "index.js",
+  "main": "lib/stream.js",
   "engines": {
     "node": ">= 0.4"
   },
