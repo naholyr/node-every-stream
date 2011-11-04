@@ -53,21 +53,46 @@ DSN: `file:///path/to/file` or directly `/path/to/file`
 
 This is strictly equivalent to `fs.createReadStream()` and/or `fs.createWriteStream()`.
 
+Sample:
+
+```javascript
+// cat
+Stream('./file.txt').pipe(process.stdout)
+```
+
 ### dir
 
 DSN: `dir:///path/to/directory`
 
 This is a read-only driver, and it will emit filenames contained in the specified folder. This driver is equivalent to using `fs.readdir()`.
 
+Sample:
+
+```javascript
+// ls
+Stream('dir://' + path.resolve('.')).pipe(process.stdout)
+```
+
 ### ftp
 
 DSN: `ftp://user:password@host/path`
 
-FTP driver is not available yet. This driver will behave like a super-simple streaming FTP transfer client.
+This driver will let you upload to a FTP server, or download from a FTP server. Further versions will enable "list" command when path ends with a trailing slash.
+
+Sample:
+
+```javascript
+var FTPFile = Stream('ftp://user:password@server/path/to/file.txt')
+// Download the file
+FTPFile.pipe(Stream('./file.txt.bak'))
+// Then upload a new one instead
+Stream('./file.txt.new').pipe(FTPFile)
+```
 
 ## Roadmap
 
-* The obvious next step is implementing `FTP` driver
+* Fix creation of inner streams: current version calls `driver.create*()` multiple times
+* Add fake stream implementations in driver module (already used in FTP driver)
 * More documentation about advanced options
 * More documentation about custom drivers
 * New drivers
