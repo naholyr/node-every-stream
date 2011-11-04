@@ -10,7 +10,9 @@
   "engines": {
     "node": ">= 0.4"
   },
-  "dependencies": {},
+  "dependencies": {
+    "ftp": "0.1.x"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "node tests"
