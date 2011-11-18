@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/naholyr/node-every-stream.png)](http://travis-ci.org/naholyr/node-every-stream)
+
 # Every-Stream -- Bi-directional DSN-based streams
 
 The aim of this module is to provide a very simple API to move content from/to a lot of different file systems. In a not-so-far future you would be able to write this:
