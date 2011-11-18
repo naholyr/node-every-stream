@@ -12,7 +12,7 @@ function execute (Stream, cb) {
       try {
         content = fs.readFileSync(file.path)
         fs.unlinkSync(file.path)
-        assert.notEqual(content.toString(), '')
+        assert.equal(content.length, 63286)
       } catch (e) {
         return cb(e)
       }
