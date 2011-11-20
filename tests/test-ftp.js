@@ -21,10 +21,14 @@ function execute (Stream, cb) {
   }
 
   function test_write () {
-    var ftp = new Stream('ftp://freebox:PASSWORD@mafreebox.freebox.fr/Disque%20dur/dst-ftp-0.txt')
+    var ftp = new Stream('ftp://freebox:abghrt@mafreebox.freebox.fr/Disque%20dur/dst-ftp-0.txt')
       , file = new Stream(path.resolve('src-ftp-0.txt'))
-    file.write('Hello, world').on('error', cb).pipe(ftp)
-    ftp.on('error', cb).on('success', function (err) {
+    file.write('Hello, world').on('end', function () {
+      console.log('SOURCE END')
+    }).on('close', function () {
+      console.log('SOURCE CLOSE')
+    }).on('error', cb).pipe(ftp.on('error', cb).on('close', function (err) {
+      console.log('FTP FINISHED')
       ftp.end()
       if (err) return cb(err)
       try {
@@ -33,11 +37,14 @@ function execute (Stream, cb) {
         return cb(e)
       }
       return cb()
+    }))
+    file.innerReadableStream.on('end', function () {
+      console.log('INNER SOURCE END')
     })
   }
 
-  test_read()
-  //test_write()
+  //test_read()
+  test_write()
 
 }
 
