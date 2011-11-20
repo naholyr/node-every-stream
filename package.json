@@ -11,7 +11,7 @@
     "node": ">= 0.4"
   },
   "dependencies": {
-    "ftp": "0.1.x"
+    "ftp-stream": "0.1.x"
   },
   "devDependencies": {},
   "scripts": {
