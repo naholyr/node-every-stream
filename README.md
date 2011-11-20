@@ -79,7 +79,7 @@ Stream('dir://' + path.resolve('.')).pipe(process.stdout)
 
 DSN: `ftp://user:password@host/path`
 
-This driver will let you upload to a FTP server, or download from a FTP server. Further versions will enable "list" command when path ends with a trailing slash.
+This driver is read-only in current version. I'm working on a full implementation to allow read-write with no issues. Further versions could enable "list" command when path ends with a trailing slash.
 
 Sample:
 
@@ -87,8 +87,6 @@ Sample:
 var FTPFile = Stream('ftp://user:password@server/path/to/file.txt')
 // Download the file
 FTPFile.pipe(Stream('./file.txt.bak'))
-// Then upload a new one instead
-Stream('./file.txt.new').pipe(FTPFile)
 ```
 
 ## Roadmap
