@@ -93,7 +93,6 @@ Stream('./file.txt.new').pipe(FTPFile)
 
 ## Roadmap
 
-* Fix creation of inner streams: current version calls `driver.create*()` multiple times
 * Add fake stream implementations in driver module (already used in FTP driver)
 * More documentation about advanced options
 * More documentation about custom drivers
