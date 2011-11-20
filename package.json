@@ -1,8 +1,8 @@
 {
   "author": "Nicolas Chambrier <naholyr@gmail.com> (http://naholyr.fr)",
   "name": "every-stream",
-  "description": "Generic DSN-based streaming API (ftp, local fs, dropbox...) Stream('ftp://user@host/path/to/file.txt').pipe(Stream('file:///path/to/local.txt'))",
-  "version": "0.0.1",
+  "description": "Generic DSN-based streaming API: Stream('ftp://user@host/path/to/file.txt').pipe(Stream('file:///path/to/local.txt'))",
+  "version": "0.1.0",
   "repository": {
     "url": "git@github.com:naholyr/node-every-stream.git"
   },
