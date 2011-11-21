@@ -28,7 +28,7 @@ npm link
 You can run unit tests:
 
 ```bash
-npm test every-auth
+npm test every-stream
 ```
 
 ## Usage
