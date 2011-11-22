@@ -19,16 +19,23 @@ npm install every-stream
 Or from source:
 
 ```bash
-# Install from sources
+# Install from sources...
 git clone git://github.com/naholyr/node-every-stream.git every-stream
 cd every-stream
 npm link
+
+# ...Then in your project
+npm link every-stream
 ```
 
 You can run unit tests:
 
 ```bash
+# From your project where every-stream has been installed as a module
 npm test every-stream
+
+# Or directly from every-stream
+npm test
 ```
 
 ## Usage
